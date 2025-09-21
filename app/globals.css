@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Dark mode as default */
+    --bg: #0b0f14;
+    --fg: #e6edf3;
+    --muted: #a9b4bf;
+
+    --card: #10151c;
+    --card-border: #1d2631;
+
+    --ok: #3fb950;           /* accessible green */
+    --ok-ink: #0b1a0e;
+
+    --bad: #f85149;          /* accessible red */
+    --bad-ink: #1a0b0b;
+
+    --accent: #7aa2f7;       /* blue for links and accents */
+    --accent-contrast: #0a121f;
+
+    --outline: #89b4fa;
+
+    /* Light mode fallback */
+    color-scheme: dark;
+  }
+
+  .light {
+    --bg: #ffffff;
+    --fg: #1a202c;
+    --muted: #4a5568;
+
+    --card: #f7fafc;
+    --card-border: #cbd5e0;
+
+    --ok: #38a169;
+    --ok-ink: #f0fff4;
+
+    --bad: #e53e3e;
+    --bad-ink: #fed7d7;
+
+    --accent: #3182ce;
+    --accent-contrast: #ebf8ff;
+
+    --outline: #3182ce;
+
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  html, body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--outline);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Skip link styles */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--accent);
+    color: var(--accent-contrast);
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+    font-weight: 600;
+  }
+
+  .skip-link:focus {
+    top: 6px;
+  }
+
+  /* Ensure proper contrast for links */
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  /* List styling for better screen reader experience */
+  ul[role="list"] {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul[role="list"] li {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  ul[role="list"] li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+    font-weight: bold;
+  }
+
+  /* Status-specific list markers */
+  .status-ok li::before {
+    content: "✓";
+    color: var(--ok);
+  }
+
+  .status-bad li::before {
+    content: "✗";
+    color: var(--bad);
+  }
+
+  /* Enhanced shadows for light mode */
+  .light .shadow-sm {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+
+  .light .shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Dark mode shadows */
+  .shadow-sm {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    :root {
+      --bg: #000000;
+      --fg: #ffffff;
+      --card: #1a1a1a;
+      --card-border: #666666;
+    }
+
+    .light {
+      --bg: #ffffff;
+      --fg: #000000;
+      --card: #f0f0f0;
+      --card-border: #333333;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

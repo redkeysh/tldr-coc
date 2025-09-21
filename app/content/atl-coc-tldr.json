@@ -1,0 +1,93 @@
+{
+  "title": "ATL Code of Conduct — TL;DR",
+  "tagline": "Be respectful. Be inclusive. No harassment. Report issues.",
+  "principles": [
+    "Maintain mutual respect and humility in all interactions",
+    "Create a safe, welcoming environment for all community members",
+    "Use English for communication and keep discussions constructive",
+    "Respect authority and follow moderator guidance"
+  ],
+  "sections": {
+    "essentials": {
+      "title": "1. Essentials",
+      "expected": [
+        "**1.1**: Keep all content Safe for Work (SFW)",
+        "**1.2**: Maintain appropriate conduct (13+ community, no romantic solicitation)",
+        "**1.3**: Show mutual respect and avoid emotional oversharing",
+        "**1.4**: Express yourself constructively while avoiding controversial topics",
+        "**1.5**: Respect diverse preferences and avoid elitism",
+        "**1.6**: Cooperate with moderators and follow their guidance"
+      ],
+      "prohibited": [
+        "**1.1**: NSFW content in messages, media, or profiles",
+        "**1.1**: Gore, excessive violence, or self-harm content",
+        "**1.2**: Sexually suggestive language or grooming behavior",
+        "**1.3**: Harassment, hate speech, threats, or discriminatory conduct",
+        "**1.4**: Politics, religion, ongoing conflicts, or heated debates",
+        "**1.5**: Deliberate elitism or disparaging others' choices",
+        "**1.6**: Ignoring moderator requests or public escalation"
+      ]
+    },
+    "participation": {
+      "title": "2. Participation",
+      "expected": [
+        "**2.1**: Use English in all communications",
+        "**2.2**: Post thoughtful, substantial content in text channels",
+        "**2.3**: Maintain quiet background and avoid disrupting voice chats",
+        "**2.4**: Use bot commands appropriately in designated channels",
+        "**2.5**: Use correct channels and stay on-topic",
+        "**2.6**: Share links with descriptions and avoid excessive content",
+        "**2.7**: Report malicious behavior through proper channels",
+        "**2.8**: Keep promotion natural and non-intrusive",
+        "**2.9**: Respect privacy and keep personal information private"
+      ],
+      "prohibited": [
+        "**2.1**: Non-English communication in server channels",
+        "**2.2**: Low-effort content, 'brainrot', or bypassing automod",
+        "**2.3**: Excessive noise, echoing, or interrupting conversations",
+        "**2.4**: Bot spam, misuse, or abuse of server features",
+        "**2.5**: Derailing support threads or off-topic posting",
+        "**2.6**: Spam, excessive caps, mass pings, or cross-posting",
+        "**2.7**: Scamming, raiding, malicious links, or harmful files",
+        "**2.8**: Artificial or excessive advertising",
+        "**2.9**: Doxxing or sharing others' personal information"
+      ]
+    },
+    "moderation": {
+      "title": "3. Moderation",
+      "expected": [
+        "**3.1**: Report issues via tickets with concrete proof and context",
+        "**3.2**: Understand that rules apply equally to all members",
+        "**3.3**: Know that audit logs are transparent and visible to all",
+        "**3.4**: Respect different enforcement methods (hard rules, case-by-case, automod)",
+        "**3.5**: Accept progressive discipline (warnings → timeouts → bans)",
+        "**3.6**: Avoid punishment evasion and accept consequences",
+        "**3.7**: Trust in fair, unbiased rule enforcement",
+        "**3.8**: Use proper appeal channels if you believe punishment is unfair"
+      ],
+      "prohibited": [
+        "**3.1**: Reporting without proof or based on rumors/hearsay",
+        "**3.2**: Expecting special treatment or rule exceptions",
+        "**3.3**: Attempting to hide actions from audit logs",
+        "**3.4**: Arguing with enforcement methods or moderator discretion",
+        "**3.5**: Refusing to accept warnings or disciplinary actions",
+        "**3.6**: Using alternate accounts to bypass restrictions",
+        "**3.7**: Claiming bias without evidence or proper appeal process",
+        "**3.8**: Public complaints about moderation instead of using tickets"
+      ]
+    }
+  },
+  "reporting": {
+    "how": "Create a support ticket for any rule violations or concerns. Provide concrete proof and context.",
+    "confidentiality": "All reports are discussed among moderators as a group. Audit logs are visible to all server members for transparency."
+  },
+  "enforcement": [
+    "Warnings for first or minor offenses",
+    "Timeouts (1 hour to 12 hours) for repeated violations", 
+    "Kicks and temporary bans for serious infractions",
+    "Permanent bans for hard rule violations (hate speech, threats, doxxing, etc.)",
+    "Appeals available through Wick bot system"
+  ],
+  "attribution": "Summarized from the official All Things Linux Code of Conduct",
+  "lastReviewed": "2025-09-21"
+}
