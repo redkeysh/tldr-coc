@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useId } from 'react';
 import { AlertCircle, Info, CheckCircle, XCircle } from 'lucide-react';
 
 interface CalloutProps {
@@ -14,6 +14,8 @@ export default function Callout({
   children, 
   className = '' 
 }: CalloutProps) {
+  const titleId = useId();
+  
   const config = {
     info: {
       icon: Info,
@@ -58,7 +60,7 @@ export default function Callout({
         ${className}
       `}
       role={role}
-      aria-labelledby={title ? `callout-title-${Date.now()}` : undefined}
+      aria-labelledby={title ? titleId : undefined}
     >
       <div className="flex items-start gap-3">
         <Icon 
@@ -67,12 +69,12 @@ export default function Callout({
         />
         <div className="flex-1">
           {title && (
-            <h4 
+            <div 
               className={`font-semibold ${iconColor} mb-2`}
-              id={title ? `callout-title-${Date.now()}` : undefined}
+              id={titleId}
             >
               {title}
-            </h4>
+            </div>
           )}
           <div className="text-[var(--fg)]">
             {children}
