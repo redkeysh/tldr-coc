@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://allthingslinux.github.io'),
+  metadataBase: new URL('https://redkeysh.github.io/tldr-coc'),
   title: 'All Things Linux - Code of Conduct (TL;DR)',
   description: 'A quick, accessible summary of the All Things Linux community Code of Conduct. Learn about expected behaviors, prohibited actions, and how to report issues.',
   keywords: ['All Things Linux', 'Code of Conduct', 'Community Guidelines', 'Discord', 'Linux Community'],
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'All Things Linux - Code of Conduct (TL;DR)',
     description: 'A quick, accessible summary of the All Things Linux community Code of Conduct.',
-    url: 'https://allthingslinux.github.io/atl-coc',
+    url: 'https://redkeysh.github.io/tldr-coc',
     siteName: 'All Things Linux CoC TL;DR',
     images: [
       {
