@@ -165,6 +165,28 @@
     }
   }
 
+  /* Card alignment utilities */
+  .card-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  @media (min-width: 1280px) {
+    .card-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-container > * {
+    flex: 1;
+  }
+
   /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {
     html {

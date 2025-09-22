@@ -130,63 +130,75 @@ export default function Home() {
             id={sectionKey} 
             title={section.title}
           >
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-12">
-              {/* Expected Column */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-[var(--ok)] mb-6 flex items-center gap-3">
+            {/* Create paired rows for side-by-side comparison */}
+            <div className="space-y-8">
+              {/* Column Headers */}
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-12">
+                <h3 className="text-2xl font-semibold text-[var(--ok)] mb-0 flex items-center gap-3">
                   <CheckCircle className="w-6 h-6" aria-hidden="true" />
                   Expected Behavior
                 </h3>
-                <div className="space-y-4">
-                  {section.expected.map((item, index) => (
-                    <TLDRCard key={`expected-${index}`} variant="ok" className="h-full">
-                      <div className="flex items-start gap-3">
-                        <CheckCircle 
-                          className="w-4 h-4 text-[var(--ok)] flex-shrink-0 mt-1" 
-                          aria-hidden="true"
-                        />
-                        <div className="flex-1">
-                          <span className="sr-only">Expected: </span>
-                          <p 
-                            className="text-[var(--fg)] leading-relaxed"
-                            dangerouslySetInnerHTML={{ 
-                              __html: item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') 
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </TLDRCard>
-                  ))}
-                </div>
-              </div>
-
-              {/* Prohibited Column */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-[var(--bad)] mb-6 flex items-center gap-3">
+                <h3 className="text-2xl font-semibold text-[var(--bad)] mb-0 flex items-center gap-3">
                   <XCircle className="w-6 h-6" aria-hidden="true" />
                   Prohibited Behavior
                 </h3>
-                <div className="space-y-4">
-                  {section.prohibited.map((item, index) => (
-                    <TLDRCard key={`prohibited-${index}`} variant="bad" className="h-full">
-                      <div className="flex items-start gap-3">
-                        <XCircle 
-                          className="w-4 h-4 text-[var(--bad)] flex-shrink-0 mt-1" 
-                          aria-hidden="true"
-                        />
-                        <div className="flex-1">
-                          <span className="sr-only">Prohibited: </span>
-                          <p 
-                            className="text-[var(--fg)] leading-relaxed"
-                            dangerouslySetInnerHTML={{ 
-                              __html: item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') 
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </TLDRCard>
-                  ))}
-                </div>
+              </div>
+
+              {/* Paired Cards */}
+              <div className="space-y-4">
+                {Array.from({ length: Math.max(section.expected.length, section.prohibited.length) }).map((_, index) => (
+                  <div key={index} className="card-row gap-4 lg:gap-8">
+                    {/* Expected Card */}
+                    <div className="card-container">
+                      {section.expected[index] ? (
+                        <TLDRCard variant="ok" className="h-full">
+                          <div className="flex items-start gap-3">
+                            <CheckCircle 
+                              className="w-4 h-4 text-[var(--ok)] flex-shrink-0 mt-1" 
+                              aria-hidden="true"
+                            />
+                            <div className="flex-1">
+                              <span className="sr-only">Expected: </span>
+                              <p 
+                                className="text-[var(--fg)] leading-relaxed"
+                                dangerouslySetInnerHTML={{ 
+                                  __html: section.expected[index].replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') 
+                                }}
+                              />
+                            </div>
+                          </div>
+                        </TLDRCard>
+                      ) : (
+                        <div className="h-full"></div>
+                      )}
+                    </div>
+
+                    {/* Prohibited Card */}
+                    <div className="card-container">
+                      {section.prohibited[index] ? (
+                        <TLDRCard variant="bad" className="h-full">
+                          <div className="flex items-start gap-3">
+                            <XCircle 
+                              className="w-4 h-4 text-[var(--bad)] flex-shrink-0 mt-1" 
+                              aria-hidden="true"
+                            />
+                            <div className="flex-1">
+                              <span className="sr-only">Prohibited: </span>
+                              <p 
+                                className="text-[var(--fg)] leading-relaxed"
+                                dangerouslySetInnerHTML={{ 
+                                  __html: section.prohibited[index].replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') 
+                                }}
+                              />
+                            </div>
+                          </div>
+                        </TLDRCard>
+                      ) : (
+                        <div className="h-full"></div>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </Section>
